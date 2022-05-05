@@ -1,3 +1,22 @@
 * {
   margin: 0px;
 }
+.cuadro {
+  width: 100%;
+  text-align: center;
+  background-color: aquamarine;
+  height: 126%;
+}
+#ahorcado {
+  height: 180px;
+  width: 180px;
+  background-image: url('./SYNTAX.png');
+  margin-left: 88px;
+}
+#TITTLE{
+  width: 62%;
+  height: 144%;
+}
+#output{
+  font-size: xxx-large;
+}
