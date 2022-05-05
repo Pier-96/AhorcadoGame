@@ -28,6 +28,8 @@ document.querySelector('#tryout').addEventListener('click', () => {
   }
 
   if (fails) {
+    document.querySelector('#ahorcado').style.backgroundPosition =
+      -(180 * failCounter) + 'px 0';
     failCounter++;
     if (failCounter == 6) {
       swal('🧨💣🧨 YOU LOST! 🧨💣🧨').then((value) => {
