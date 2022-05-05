@@ -1,3 +1,3 @@
 # AhorcadoGame
 
-Exercise for HACKABOOS
+Exercise for HACKABOSS
