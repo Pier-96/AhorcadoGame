@@ -1,32 +1,47 @@
+// Esta función es para que se pueda remplazar la letra por el _
 String.prototype.replaceAt = function (index, character) {
   return (
     this.substr(0, index) + character + this.substr(index + character.length)
   );
 };
+const words = ['dog', 'cat', 'morning', 'keyboard', 'device'];
+const randomWord = words[Math.floor(Math.random() * words.length)];
+let wordReplaced = randomWord.replace(/./g, '_ ');
+let failCounter = 0;
 
-const palabras = ['casa', 'perro', 'comillas', 'zapato'];
+document.querySelector('#output').innerHTML = wordReplaced;
 
-const palabra = palabras[Math.floor(Math.random() * palabras.length)];
-var palabraConGuiones = palabra.replace(/./g, '_ ');
-var contadorfallos = 0;
+document.querySelector('#tryout').addEventListener('click', () => {
+  const word = document.querySelector('#word').value;
+  let fails = true;
 
-document.querySelector('#output').innerHTML = palabraConGuiones;
-document.querySelector('#calcular').addEventListener('click', () => {
-  const letra = document.querySelector('#letra').value;
-  var hafallado = true;
-  for (const i in palabra) {
-    if (letra == palabra[i]) {
-      palabraConGuiones = palabraConGuiones.replaceAt(i * 2, letra);
-      hafallado = false;
+  for (const i in randomWord) {
+    if (word == randomWord[i]) {
+      wordReplaced = wordReplaced.replaceAt(i * 2, word);
+      fails = false;
     }
   }
-  if (hafallado) {
-    contadorfallos++;
-      document.querySelector('#ahorcado').style.backgroundPosition =
-        -(180 * contadorfallos) + 'px 0';
-        if(contadorfallos == 6){
-          alert('perdiste')
-        }
+
+  // Esta funcion hará que la pagina se reinicie después de unos segundos
+  function delayLoad() {
+    window.location.reload();
+  }
+
+  if (fails) {
+    failCounter++;
+    if (failCounter == 6) {
+      swal('🧨💣🧨 YOU LOST! 🧨💣🧨').then((value) => {
+        swal(`The word was: ${randomWord}! 🤯`);
+        setTimeout(delayLoad, 3000);
+      });
+    } else {
+      if (wordReplaced.indexOf('_') < 0) {
+        swal('🎉✨Congrats!✨🎉', '🏆 You guessed the word! 🏆', 'success');
+        setTimeout(delayLoad, 3000);
+      }
     }
-  document.querySelector('#output').innerHTML = palabraConGuiones;
+  }
+
+  document.querySelector('#output').innerHTML = wordReplaced;
+  document.querySelector('#word').value = '';
 });
