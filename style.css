@@ -1,22 +1,101 @@
 * {
   margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
 }
+::-webkit-input-placeholder {
+  text-align: center;
+  font-family: 'Koulen', cursive;
+}
+
+body {
+  max-height: fit-content;
+}
+
+.mainpage {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
 .cuadro {
   width: 100%;
   text-align: center;
   background-color: aquamarine;
-  height: 126%;
 }
+
+p {
+  font-size: 2rem;
+  font-family: 'Koulen', cursive;
+}
+
+#word {
+  border-radius: 20px;
+  height: 2rem;
+  margin: auto;
+  width: 10rem;
+  place-content: initial;
+  border-radius: 100px;
+  padding: 7px 20px;
+  border: 0;
+  font-size: 16px;
+}
+
 #ahorcado {
   height: 180px;
   width: 180px;
   background-image: url('./SYNTAX.png');
-  margin-left: 88px;
+  margin: auto;
 }
 #TITTLE {
   width: 62%;
   height: 144%;
 }
 #output {
+  padding-top: 17px;
   font-size: xxx-large;
+  padding-bottom: 80px;
+}
+
+/* CSS */
+.button-33 {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
+    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
+    rgba(44, 187, 99, 0.15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Koulen', cursive;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-33:hover {
+  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
+    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
+    rgba(44, 187, 99, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+/* Para pantalla de pc */
+
+@media (min-width: 700px) {
+  #TITTLE {
+    width: 20%;
+  }
+
+  #output {
+    padding-top: 0px;
+    padding-bottom: 62px;
+  }
 }

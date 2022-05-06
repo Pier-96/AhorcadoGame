@@ -4,7 +4,15 @@ String.prototype.replaceAt = function (index, character) {
     this.substr(0, index) + character + this.substr(index + character.length)
   );
 };
-const words = ['dog', 'cat', 'morning', 'keyboard', 'device'];
+const words = [
+  'dog',
+  'cat',
+  'morning',
+  'keyboard',
+  'device',
+  'manager',
+  'teacher',
+];
 const randomWord = words[Math.floor(Math.random() * words.length)];
 let wordReplaced = randomWord.replace(/./g, '_ ');
 let failCounter = 0;
@@ -36,12 +44,12 @@ document.querySelector('#tryout').addEventListener('click', () => {
         swal(`The word was: ${randomWord}! 🤯`);
         setTimeout(delayLoad, 3000);
       });
-    } else {
-      if (wordReplaced.indexOf('_') < 0) {
-        swal('🎉✨Congrats!✨🎉', '🏆 You guessed the word! 🏆', 'success');
-        setTimeout(delayLoad, 3000);
-      }
     }
+  }
+
+  if (wordReplaced.indexOf('_') < 0) {
+    swal('🎉✨Congrats!✨🎉', '🏆 ¡You guessed the word! 🏆', 'success');
+    setTimeout(delayLoad, 3000);
   }
 
   document.querySelector('#output').innerHTML = wordReplaced;
