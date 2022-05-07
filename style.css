@@ -4,19 +4,41 @@
 .cuadro {
   width: 100%;
   text-align: center;
-  background-color: aquamarine;
+  background-color: #151718;
   height: 126%;
 }
 #ahorcado {
-  height: 180px;
-  width: 180px;
+  height: 333px;
+  width: 333px;
   background-image: url('./SYNTAX.png');
-  margin-left: 88px;
+  margin-left: 10%;
+
 }
-#TITTLE{
+#TITTLE {
   width: 62%;
   height: 144%;
 }
-#output{
+#output {
   font-size: xxx-large;
+  color: white;
+  height: 196px;
+}
+#word{
+  width: 190px;
+  height: 48px;
+}
+#tryout{
+  width: 198px;
+    background: violet;
+}
+@media (min-width: 900px) {
+  #TITTLE {
+    width: 33%;
+  }
+  #output{
+    height: 35px;
+  }
+  #ahorcado{
+    margin-left: 33%;
+  }
 }

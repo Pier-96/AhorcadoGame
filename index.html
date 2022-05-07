@@ -1,22 +1,38 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Koulen&family=Oswald:wght@500&family=Poppins:wght@300;400;500;600&family=Zen+Kurenaido&display=swap"
+      rel="stylesheet"
+    />
     <title>Ahorcado Game</title>
+    <script
+      src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="cuadro">
-      <img src="carbon.png" alt="" id="TITTLE"/>
-      <p>escribe tu letra</p>
-      <input type="text" maxlength="1" id="letra" /> <br />
-      <button id="calcular">veriica tu letra</button>
+      <img src="carbon.png" alt="" id="TITTLE" />
+      <div class="mainpage">
+        <p>Introduzca una letra!</p>
+        <input
+          type="text"
+          maxlength="1"
+          style="text-transform: lowercase"
+          id="word"
+          placeholder="Enter a letter "
+          required
+        />
+        <button class="button-33" role="button" id="tryout">Check</button>
+      </div>
       <p id="output"></p>
       <div id="ahorcado"></div>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>
