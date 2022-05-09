@@ -20,7 +20,7 @@ let failCounter = 0;
 document.querySelector('#output').innerHTML = wordReplaced;
 
 document.querySelector('#tryout').addEventListener('click', () => {
-  const word = document.querySelector('#word').value;
+  const word = document.querySelector('#word').value.toLowerCase();
   let fails = true;
 
   for (const i in randomWord) {
